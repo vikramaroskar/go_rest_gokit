@@ -1,32 +1,25 @@
 package account
 
-
 import (
+	"context"
 	"database/sql"
 	"errors"
-	
-	"github.com/go-kit/kit/log"
 
+	"github.com/go-kit/kit/log"
 )
 
-
-
-var RepoErr = errors.New("Unable to handle repo request")
+var RepoErr = errors.New("Unable to handle Repo Request")
 
 type repo struct {
-
-	db *sql.DB
+	db     *sql.DB
 	logger log.Logger
 }
 
 func NewRepo(db *sql.DB, logger log.Logger) Repository {
-
-
-	return &repo(
-		db: db,
-		logger: log.With(logger, "repo", "gouserschema")
-	)
-
+	return &repo{
+		db:     db,
+		logger: log.With(logger, "repo", "gouserschema"),
+	}
 }
 
 func (repo *repo) CreateUser(ctx context.Context, user User) error {

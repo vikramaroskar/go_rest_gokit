@@ -18,7 +18,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"main/account"
+	"example.com/user/hello/account"
 )
 
 const dbsource = "easyfloh:easyfloh@tcp(127.0.0.1:3306)/gouserschema"
