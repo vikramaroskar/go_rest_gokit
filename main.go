@@ -23,6 +23,7 @@ import (
 
 const dbsource = "easyfloh:easyfloh@tcp(127.0.0.1:3306)/gouserschema"
 
+
 func main() {
 	var httpAddr = flag.String("http", ":8080", "http listen address")
 	var logger log.Logger
